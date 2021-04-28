@@ -14,7 +14,6 @@ import 'package:ml_app/text_reader_widget.dart';
 import 'face_detection_widget_folder/face_detection_widget1.dart';
 //import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 //import 'package:image_picker/image_picker.dart';
-//import 'package:camera/camera.dart';
 
 void main() {
   runApp(MyApp());
