@@ -36,6 +36,8 @@ dependencies:
   firebase_ml_vision: ^0.12.0+1
   image_picker: ^0.7.4
   camera: ^0.8.1
+  flutter_linkify: ^5.0.2
+  url_launcher: ^6.0.3
   
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ml_app/face_detection_widget_folder/face_detection_camera.dart';
 import 'package:ml_app/face_detection_widget_folder/face_detection_image.dart';
+import 'package:ml_app/face_detection_widget_folder/live.dart';
 
 class FaceDetection extends StatelessWidget {
   @override
@@ -14,20 +14,15 @@ class FaceDetection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-                child: Text('Add Smile to Face from Image'),
+                child: Text('Open Camera'),
+                style: ButtonStyle(
+                  padding: MaterialStateProperty.all(
+                      EdgeInsets.symmetric(horizontal: 100, vertical: 50)),
+                ),
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => FaceDetectionFromImage(),
-                    ),
-                  );
-                }),
-            ElevatedButton(
-                child: Text('Add Smile to Face from Live Camera'),
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => FaceDetectionFromLiveCamera(),
+                      builder: (context) => LiveLabling(),
                     ),
                   );
                 }),

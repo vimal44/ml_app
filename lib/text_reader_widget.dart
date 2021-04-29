@@ -116,11 +116,11 @@ class _TextReaderState extends State<TextReader> {
                                 ElevatedButton(
                                   child: Text('gallery image'),
                                   onPressed: pickImage,
-                                ),
-                                SizedBox(height: 10.0),
-                                ElevatedButton(
-                                  child: Text('Clear'),
-                                  onPressed: pickImage,
+                                  style: ButtonStyle(
+                                    padding: MaterialStateProperty.all(
+                                        EdgeInsets.symmetric(
+                                            horizontal: 100, vertical: 50)),
+                                  ),
                                 ),
                               ],
                             ),

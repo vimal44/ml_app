@@ -75,7 +75,7 @@ class _MyBarecodeState extends State<MyBarecode> {
                         SingleChildScrollView(
                           scrollDirection: Axis.vertical,
                           child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 15),
+                            padding: EdgeInsets.all(15),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -104,11 +104,11 @@ class _MyBarecodeState extends State<MyBarecode> {
                                 ElevatedButton(
                                   child: Text('gallery image'),
                                   onPressed: pickImage,
-                                ),
-                                SizedBox(height: 10.0),
-                                ElevatedButton(
-                                  child: Text('Clear'),
-                                  onPressed: pickImage,
+                                  style: ButtonStyle(
+                                    padding: MaterialStateProperty.all(
+                                        EdgeInsets.symmetric(
+                                            horizontal: 100, vertical: 50)),
+                                  ),
                                 ),
                               ],
                             ),

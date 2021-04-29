@@ -67,72 +67,60 @@ class _ImageLablingState extends State<ImageLabling> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-            child: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
+            child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        SizedBox(height: 100.0),
+        _image != null
+            ? Center(
                 child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        SizedBox(height: 100.0),
-                        _image != null
-                            ? Center(
-                                child: Container(
-                                    height: 200.0,
-                                    width: 200.0,
-                                    decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                            image: FileImage(_image),
-                                            fit: BoxFit.cover))),
-                              )
-                            : Container(),
-                        SingleChildScrollView(
-                          scrollDirection: Axis.vertical,
-                          child: Container(
-                            padding: EdgeInsets.symmetric(horizontal: 5),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(height: 20),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    new Expanded(
-                                      flex: 1,
-                                      child: new SingleChildScrollView(
-                                        scrollDirection:
-                                            Axis.vertical, //.horizontal
-                                        child: new Text(
-                                          '$result',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              fontFamily: 'finger_paint',
-                                              fontSize: 20),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 10.0),
-                                ElevatedButton(
-                                  child: Text('gallery image'),
-                                  onPressed: _imgFromGallery,
-                                ),
-                                SizedBox(height: 10.0),
-                                ElevatedButton(
-                                  child: Text('Read Text'),
-                                  onPressed: _imgFromGallery,
-                                ),
-                                ElevatedButton(
-                                  child: Text('Read Bar Code'),
-                                  onPressed: _imgFromGallery,
-                                )
-                              ],
-                            ),
-                          ),
+                    height: 200.0,
+                    width: 200.0,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: FileImage(_image), fit: BoxFit.cover))),
+              )
+            : Container(),
+        SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    new Expanded(
+                      flex: 1,
+                      child: new SingleChildScrollView(
+                        scrollDirection: Axis.vertical, //.horizontal
+                        child: new Text(
+                          '$result',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontFamily: 'finger_paint', fontSize: 20),
                         ),
-                      ],
-                    )))));
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10.0),
+                ElevatedButton(
+                  child: Text('gallery image'),
+                  style: ButtonStyle(
+                    padding: MaterialStateProperty.all(
+                        EdgeInsets.symmetric(horizontal: 100, vertical: 50)),
+                  ),
+                  onPressed: _imgFromGallery,
+                ),
+                SizedBox(height: 10.0),
+              ],
+            ),
+          ),
+        ),
+      ],
+    )));
   }
 }

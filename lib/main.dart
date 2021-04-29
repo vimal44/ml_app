@@ -1,11 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ml_app/bareCode_widget.dart';
 
 import 'package:ml_app/image_lablling_folder/image_labling.dart';
 import 'package:ml_app/text_reader_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 //import 'package:firebase_core/firebase_core.dart';
 //import 'package:cloud_firestore/cloud_firestore.dart';
@@ -66,44 +68,6 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Learn ML'),
         backgroundColor: Colors.lightGreen,
         elevation: 10.0,
-      ),
-      drawer: Drawer(
-        elevation: 12,
-        child: ListView(
-          // Important: Remove any padding from the ListView.
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(colors: <Color>[
-                Colors.greenAccent,
-                Colors.lightGreenAccent
-              ])),
-              child: Text("welcome"),
-            ),
-            ListTile(
-              leading: Icon(Icons.home),
-              title: Text("Home"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text("Settings"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.contacts),
-              title: Text("Contact Us"),
-              onTap: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -351,15 +315,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         padding:
                             EdgeInsets.symmetric(vertical: 40, horizontal: 20),
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(30)),
-                            color: Colors.amber,
-                            boxShadow: [
-                              BoxShadow(
-                                  spreadRadius: 0,
-                                  offset: Offset(0, 10),
-                                  blurRadius: 0,
-                                  color: Colors.blue.withOpacity(0.4))
-                            ]),
+                          borderRadius: BorderRadius.all(Radius.circular(30)),
+                          color: Colors.white,
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -367,26 +325,18 @@ class _MyHomePageState extends State<MyHomePage> {
                               child: Container(
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                  image: AssetImage(
-                                      "assets_images/faceregImages.jpg"),
-                                  fit: BoxFit.cover,
+                                  image: AssetImage("assets_images/index.png"),
+                                  fit: BoxFit.fill,
                                 )),
                               ),
                             ),
                             SizedBox(
                               height: 10,
                             ),
-                            Text(
-                              "Image Labling",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w600),
-                            )
                           ],
                         ),
                       ),
-                      onTap: openFaceDetection,
+                      //onTap: openFaceDetection,
                     ),
                   ],
                 )
